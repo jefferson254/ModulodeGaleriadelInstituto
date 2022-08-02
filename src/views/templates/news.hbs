@@ -1,0 +1,19 @@
+<section class="content">
+    {{#each news}}
+        <h3 class="title-hexagonal-h3 title-section-hex-blue">{{title}}</h3>
+        <div class="img-new">
+            <aimg src="/{{imge}}" alt="" width="auto" height="850px">
+        </div>
+        <div class="content">
+            <div class="grid-new">
+                    <h5>Autor: {{author}}</h5>
+                    <h5>Fecha: {{date}}</h5>
+                    {{#each paragraphs}}
+                        <p class="parrafos-inti">
+                            {{this}}
+                        </p>
+                    {{/each}}
+            </div>
+        </div>
+     {{/each}}
+</section>

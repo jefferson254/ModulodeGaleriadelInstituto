@@ -1,0 +1,141 @@
+<ul class="breadcrumb">
+  <li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a itemprop="url" href="/galeria"><span itemprop="title">Galería</span></a></span>
+    <span class="divider"> <span class="accesshide "><span class="arrow_text">/</span>&nbsp;</span>
+      <span class="arrow sep"></span> </span>
+  </li>
+  <li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+      <a itemprop="url" title="" aria-current="page" href="/galeria/categoria">
+        <span itemprop="title">Categorías</span></a></span></li></span>
+  <span class="divider"> <span class="accesshide "><span class="arrow_text">/</span>&nbsp;</span>
+    <span class="arrow sep"></span> </span></li>
+  <li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">/<span itemscope=""
+        itemtype="http://data-vocabulary.org/Breadcrumb">
+        <a itemprop="url" title="" aria-current="page">
+          <span itemprop="title">Subcategoría</span></a></span></a></span></li></span>
+</ul>
+
+<section class="content">
+  </div>
+  <h2 class="title-hexagonal title-section-hex-blue">Fotos de Subcategoría</h2>
+  <section>
+    <div class="grid-gallery cardContainer">
+      <div class=" item--full" style="background-image: url('../../img/galeria/publicidad1.jpg');">
+      </div>
+      <!-- Modal -->
+
+
+      {{#each categorias}}
+      <div class="item--large" data-toggle="modal" data-target="#{{@index}}">
+        <img src="{{path}}" class="item-gallery item--full">
+        <div class="card-title">{{title}}
+        </div>
+        <div class="card-description">{{description}}
+          {{created_at}}
+        </div>
+
+        <div class="modal" tabindex="-1" id="{{@index}}" role="dialog">
+          
+           
+             
+              <div class="modal-body">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                  <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                      {{#each files}}
+        
+                      <div class="swiper-slide">
+                        <img src="{{this}}" alt="..." class="pswp__img" >
+                      </div>
+                      {{/each}}
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+             
+            
+          
+        </div>
+        {{!-- <a href="/galeria/subcategorias/todos{{parent_id}}" target="_blank" class="btn btn-primary">Ver
+        </a> --}}
+      </div>
+      {{/each}}
+
+  </section>
+</section>
+
+
+
+{{!-- es importante para el modal --}}
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<!-- Demo styles -->
+<style>
+  .modal-contenido {
+    background-color: aqua;
+    width: 300px;
+    padding: 10px 20px;
+    margin: 20% auto;
+    position: relative;
+  }
+
+  .modal {
+    background-color: rgba(0, 0, 0, .8);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  .swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 630px;
+    height: 630px;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .item-gallery {
+    width: 400px;
+    height: 400px;
+    background-size: cover;
+  }
+</style>
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+
+  });
+</script>

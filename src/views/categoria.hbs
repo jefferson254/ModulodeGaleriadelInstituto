@@ -1,0 +1,109 @@
+<ul class="breadcrumb">
+    <li><span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <a itemprop="url" href="/galeria"><span itemprop="title">Galería</span></a></span>
+        <span class="divider"> <span class="accesshide "><span class="arrow_text">/</span>&nbsp;</span>
+            <span class="arrow sep"></span> </span>
+    </li>
+    <li><span tabindex="0">Categorías</span>
+        <span class="divider"> <span class="accesshide ">
+                </a></span>
+    </li>
+</ul>
+<section class="content">
+
+    </div>
+    <h2 class="title-hexagonal title-section-hex-blue">Categorías</h2>
+
+    <section>
+        <div class="grid-gallery cardContainer">
+            <div class=" item--full" style="background-image: url('../../img/galeria/publicidad1.jpg');">
+            </div>
+            {{#each categorias}}
+            <div class="item--large" data-toggle="modal" data-target="#modalForm">
+                <img src="{{path}}" class="item-gallery item--full">
+                <div class="card-title">{{title}}
+                </div>
+                <div class="card-description">{{description}} <br>
+                    <a href="/galeria/subcategorias/{{_id}}" class="btn btn-primary">Ver</a>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+
+    </section>
+</section>
+
+
+
+<!-- Swiper -->
+{{!-- <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        {{#each urls}}
+        <img src="{{url}}" class="swiper-slide">
+        {{/each}}
+
+    </div>
+    <div class="swiper-pagination"></div>
+</div> --}}
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+</div>
+</section>
+</section>
+
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+<!-- Demo styles -->
+<style>
+    .swiper {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 400px;
+        height: 400px;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .item-gallery {
+        width: 400px;
+        height: 400px;
+        background-size: cover;
+    }
+</style>
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+
+        coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+        },
+
+    });
+</script>

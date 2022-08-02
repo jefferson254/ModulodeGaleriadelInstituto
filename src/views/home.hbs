@@ -1,0 +1,349 @@
+<section>
+    <div class="slider">
+        {{!-- Slider --}}
+        <div class="slider-container1">
+            <div class="container">
+                <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+
+                        <div class="item active">
+                            <img src="img/home/sliders/1.jpg" alt="Los Angeles" style="width:100%;"/>
+                            <div class="carousel-caption">
+                                <h3>Matriculate!</h3>
+                                <p>Únete a nuestra institución</p>
+                                <a href="/requisitos-matriculas" class="button-slider button-slider-more">Más
+                                    información</a>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <img src="img/home/sliders/2.jpg" alt="Chicago" style="width:100%;"/>
+                            <div class="carousel-caption">
+                                <h3>Proceso de Admisión</h3>
+                                <p>Postulate!</p>
+                                <a href="/admisiones" class="button-slider button-slider-more">Más información</a>
+                            </div>
+                        </div>
+
+                        <div class="item">
+                            <img src="img/home/sliders/3.jpg" alt="New York" style="width:100%;"/>
+                            <div class="carousel-caption">
+                                <h3>Carreras Técnicas y Tecnológicas</h3>
+                                <p></p>
+                                <a href="/#oferta-academica" class="button-slider button-slider-more">Más
+                                    información</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{!-- end Slider --}}
+
+        {{!-- Menu right --}}
+        <div class="slider-container2">
+            <article class="panel-iconos">
+                <ul>
+                    {{#each menusRight}}
+                        <li class="hvr-wobble-horizontal">
+                            <i class="{{icon}}" style="font-size: {{size}}; color: {{color}}"></i>
+                            <a href="{{link}}" target="{{target}}">{{name}}</a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </article>
+        </div>
+        {{!-- end Menu right --}}
+    </div>
+    {{!-- Menu down --}}
+    <div class="section-icons section-hex-gris-claro">
+        <article class="icon-list">
+            <ul>
+                {{#each menusDown}}
+                    <li class="hvr-bounce-in">
+                        <a href="{{link}}" target="{{target}}">
+                            <i class="{{icon}}" style="font-size: {{size}}; color: {{color}}"></i>
+                            <div>
+                                <h4>{{name}}</h4>
+                            </div>
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
+        </article>
+    </div>
+    {{!-- end Menu down --}}
+
+    {{!-- Carreras vigentes start --}}
+    <div class="content-hexagonal tour" id="oferta-academica">
+        <h2 class="title-hexagonal title-section-hex-gray">Oferta Académica</h2>
+        <span class="line"></span>
+        <div class="content">
+            <h2 class="title title-section-hex-blue">Carreras Técnicas y Técnológicas</h2>
+            <ul id="hexGrid">
+                {{#each menusCareers}}
+                    <li class="hex">
+                        <h5 class="title-carreras">{{name}}</h5>
+                        <div class="hexIn">
+                            <a class="hexLink" href="{{link}}" target="{{target}}">
+                                <img src="{{image}}" alt=""/>
+                                <h1>{{name}}</h1>
+                                <p>{{description}}</p>
+                            </a>
+                        </div>
+                    </li>
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+    {{!-- Carreras Vigentes end --}}
+
+    {{!-- Noticias --}}
+    <div class="content section-hex-gris-claro">
+        <h2 class="title-hexagonal title-section-hex-blue">Últimas Noticias</h2>
+        <span class="line"></span>
+        <div>
+            <div id="spacer"></div>
+            <div class="container">
+                <div id="myCarousel-news" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators-news">
+                        <li data-target="#myCarousel-news" data-slide-to="0" class="active"></li>
+                        {{!-- <li data-target="#myCarousel-news" data-slide-to="1"></li> --}}
+                    </ol>
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+
+                        <div class="item active">
+                            <div class="container">
+                                <div id="wrapper" class="row body-news">
+                                    {{#each news}}
+                                        <div class="col-md-4 col-lg-3 hvr-grow">
+                                            <a href="/news/{{_id}}" target="targer">
+                                                <div class="news-grid">
+                                                    <div class="news-image"
+                                                         style="background-image: url(../{{image}}) !important">
+                                                    </div>
+                                                    <div class="news-content">
+                                                        <span class="news-date">{{date}}</span><span
+                                                            class="triangle-right"></span>
+                                                        <h3>{{title}}</h3>
+                                                        <h4>{{short_description}}</h4>
+                                                    </div>
+                                                    <div class="news-footer">
+                                                        <span class="author">{{author}}</span>
+                                                        <a class="button-card" href="/news/{{_id}}" target="{{target}}">
+                                                            <span class="boton-ver-mas">Ver más</span>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    {{/each}}
+                                </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        {{!-- <div class="item">
+                          <div class="container">
+                            <div id="wrapper" class="row body-news">
+                              <div class="col-md-4 col-lg-3 hvr-grow">
+                                <a href="">
+                                  <div class="news-grid">
+                                    <div class="news-image"
+                                      style="background-image: url(../img/noticias/noticia-modas.jpg) !important">
+                                    </div>
+                                    <div class="news-content">
+                                      <span class="news-date">
+                                        Junio 17, 2019</span><span class="triangle-right"></span>
+                                      <h3>El martes 04 de marzo se realizó el desfile de la Carrera de Diseño de Modas con las
+                                        últimas tendencias </h3>
+                                      <h4>Amig@s de Oye Ve y Dile, estamos próximos a conmemorar el Día Mundial del Patrimonio
+                                        Cultural y el Instituto Superior Yavirac.</h4>
+                                    </div>
+                                    <div class="news-footer">
+                                      <span class="author">Autor: John Watson</span>
+                                      <a class="button-card" href="">
+                                        <span class="boton-ver-mas">Ver más</span>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+
+                              <div class="col-md-4 col-lg-3 hvr-grow">
+                                <a href="https://www.w3schools.com">
+                                  <div class="news-grid">
+                                    <div class="news-image"
+                                      style="background-image: url(../img/noticias/prueba-noticia1.jpg) !important">
+                                    </div>
+                                    <div class="news-content">
+                                      <span class="news-date">
+                                        Agosto 12, 2021</span><span class="triangle-right"></span>
+                                      <h3> Las últimas noticias de hoy de actualidad y la última hora del lunes, 24 de enero del
+                                        2022</h3>
+                                      <h4>La variante Ómicron del coronavirus, de la que podrían contagiarse el 60% de los europeos
+                                        antes de marzo según estimaciones de la OMS, se ha dado paso a la nueva fase de la pandemia.
+                                      </h4>
+                                    </div>
+                                    <div class="news-footer">
+                                      <span class="author">Autor: John Watson</span>
+                                      <a class="button-card" href="">
+                                        <span class="boton-ver-mas">Ver más</span>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+
+                              <div class="col-md-4 col-lg-3 hvr-grow">
+                                <a href="https://www.w3schools.com">
+                                  <div class="news-grid">
+                                    <div class="news-image"
+                                      style="background-image: url(../img/noticias/prueba-noticia2.jpg) !important">
+                                    </div>
+                                    <div class="news-content">
+                                      <span class="news-date">
+                                        Enero 21, 2021 </span><span class="triangle-right"></span>
+                                      <h3> Quito definirá nuevas medidas ante COVID (y otras noticias en un resumen para comenzar la
+                                        jornada)</h3>
+                                      <h4> Según el alcalde capitalino, en esa reunión se definirán las acciones que se tomarán,
+                                        pues “la salud y bienestar de los quiteños de la ciudad”.</h4>
+                                    </div>
+                                    <div class="news-footer">
+                                      <span class="author">Autor: John Watson</span>
+                                      <a class="button-card" href="">
+                                        <span class="boton-ver-mas">Ver más</span>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                            </a>
+                          </div>
+                        </div> --}}
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    {{!-- end Noticias --}}
+
+    {{!-- Videos institucionales --}}
+    <div class="content-hexagonal">
+        <h2 class="title-hexagonal title-section-hex-blue">¡Conoce más acerca de nosotros!</h2>
+        <span class="line"></span>
+        <div class="grid content">
+            <div class="adicionales-grid">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/Jl2q0tflI8U"
+                        title="YouTube video player"
+                        frameborder="0" allow="accelerometer;
+            clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div class="adicionales-grid">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/lkO6K24A4Bk?start=35"
+                        title="YouTube video player" frameborder="0" allow="accelerometer;
+            clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+    {{!-- end Videos institucionales --}}
+
+    {{!-- Entidades formadoras --}}
+    <div class="empresas-formadoras content" id="Vinculacion">
+        <h2 class="title-hexagonal title-section-hex-blue">Entidades Formadoras</h2>
+        <span class="line"></span>
+        <section class="content-hexagonal" id="empresas">
+            <div class="mb-4 mt-10">
+                <div class="owl-carousel owl-theme ">
+                    {{#each companyFormation}}
+                        <a class="p-2" href="{{link}}" target="{{target}}"><img src="{{logo}}" alt="{{name}}"></a>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+        <div class="buttons-empresas">
+            <a class="footer-call-to-action-button button space-button hvr-pulse-grow"
+               href="https://forms.gle/aAfjnohSt2xtLHt6A" target="_blank">
+                <span>Quiero ser una Entidad Formadora</span>
+            </a>
+        </div>
+    </div>
+    {{!-- end Entidades formadoras --}}
+
+    {{!-- Vinculacion --}}
+    <div class="empresas-formadoras content">
+        <h2 class="title-hexagonal title-section-hex-blue">Vinculación con la Sociedad</h2>
+        <span class="line"></span>
+        <section class="content-hexagonal" id="empresas">
+            <div class="mb-4 mt-10">
+                <div class="owl-carousel owl-theme ">
+                    {{#each affiliation}}
+                        <a class="p-2" href="{{link}}" target="{{target}}"><img src="{{logo}}" alt="{{name}}"></a>
+                    {{/each}}
+                </div>
+            </div>
+        </section>
+        <div class="buttons-empresas">
+            <a class="footer-call-to-action-button button space-button hvr-pulse-grow"
+               href="https://forms.gle/JaV47d1KxhCujsqc6" target="_blank">
+                <span>Solicitar Vinculación</span>
+            </a>
+        </div>
+    </div>
+    {{!-- end Vinculacion --}}
+
+</section>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="owl/owl.carousel.min.js"></script>
+<script>
+    //Carousel-noticias
+    var abcElements = document.querySelectorAll('.carousel-indicators-news li');
+    for (let i = 0; i < abcElements.length; i++) {
+        abcElements[i].addEventListener('click', function () {
+            if (abcElements[i].getAttribute("data-slide-to") != 0) {
+                abcElements[0].classList.remove("active");
+                abcElements[i].classList.add("active");
+            }
+            if (abcElements[i].getAttribute("data-slide-to") == 0) {
+                abcElements[1].classList.remove("active");
+                abcElements[i].classList.add("active");
+            }
+
+        })
+    }
+    //Carousel-empresas
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        dots: false,
+        autoplay: true,
+        responsive: {
+            0: {
+                items: 2
+            },
+            600: {
+                items: 4
+            },
+            1000: {
+                items: 8
+            }
+        }
+    })
+</script>

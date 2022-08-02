@@ -1,0 +1,168 @@
+<section>
+    {{#each career}}
+        <h2 class="title-hexagonal title-section-hex-blue">{{name}}</h2>
+        <div>
+            <figure class="imagen-banner-arte-culinario"
+                    style="{{banner}};
+                            background-size: cover;"></figure>
+        </div>
+
+        <div class="content">
+            <div class="outside">
+                <div class="card-wrapper">
+                    <div class="card-img">
+                        <iframe width="560" height="315" src="{{section_video}}"
+                                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay;
+         clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="card-info">
+                        <p class="card-description">
+                            {{section_text}}
+                        </p>
+                        <div class="button-postulate hvr-sink">
+                            <div class="button-postulate">
+                                <i class="bi bi-clipboard2-check" style="font-size: 4.5rem; color: #085eb9"></i>
+                            </div>
+                            {{#if_equal code "CIOR"}}
+                                <a href="../pdf/careers/cior/frequent-questions.pdf"
+                                   class="footer-call-to-action-button button space-button"
+                                   target="_blank">
+                                    <span>Informate aquí</span>
+                                </a>
+                            {{else}}
+                                <a href="/admisiones"
+                                   class="footer-call-to-action-button button space-button"
+                                   target="_blank">
+                                    <span>Postulate aquí</span>
+                                </a>
+                            {{/if_equal}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="body section-hex-gris-claro">
+            <main class="cards first">
+                <section class="card rattata">
+                    <div class="icon">
+                        <i class="bi bi-mortarboard"></i>
+                    </div>
+                    <h3>Título a obtener</h3>
+                    <span>{{title}}</span>
+                </section>
+                <section class="card jigglypuff">
+                    <div class="icon">
+                        <i class="bi bi-clock-history"></i>
+                    </div>
+                    <h3>Tiempo de duración</h3>
+                                        <span>{{duration}}</span>
+                </section>
+                <section class="card rattata">
+                    <div class="icon">
+                        <i class="bi bi-layers-half"></i>
+                    </div>
+                    <h3>Modalidad</h3>
+                    <span>{{modality}}</span>
+                </section>
+            </main>
+        </div>
+        <div class="body section-hex-gris-claro">
+            <main class="cards">
+                <section class="card dewgong">
+                    <div class="icon">
+                        <i class="bi bi-bank"></i>
+                    </div>
+                    <h3>Resolución</h3>
+                    <span>{{resolution}}</span>
+                    <a
+                            href="/{{resolution_pdf}}"
+                            class="footer-call-to-action-button button hvr-wobble-horizontal"
+                            target="_blank"
+                    >Descargar resolución</a>
+                </section>
+                <section class="card jigglypuff">
+                    <div class="icon">
+                        <i class="bi bi-menu-button-wide-fill"></i>
+                    </div>
+                    <h3>Malla curricular</h3>
+                    <span>{{curricular_mesh}}</span>
+                    <a href="/{{curricular_mesh_pdf}}"
+                       target="_blank"
+                       class="footer-call-to-action-button button hvr-wobble-horizontal"
+                    >Descargar malla</a>
+                </section>
+                <section class="card dewgong">
+                    <div class="icon">
+                        <i class="bi bi-person-video3"></i>
+                    </div>
+                    <h3>Equipo docente</h3>
+                    <span>{{teachers}}</span>
+                    <a href="/careers/{{code}}/teachers"
+                       class="footer-call-to-action-button button hvr-wobble-horizontal">Más
+                        información</a>
+                </section>
+            </main>
+        </div>
+        <div class="body section-hex-gris-claro">
+            <main class="cards">
+                <section class="card rattata">
+                    <div class="icon">
+                        <i class="bi bi-coin"></i>
+                    </div>
+                    <h3>Costo de la carrera</h3>
+                    <span>{{cost}}</span>
+                </section>
+            </main>
+        </div>
+    {{/each}}
+
+    <div class="section-icons section-hex-gris-claro">
+        <article class="icon-list">
+            <ul>
+                {{#each menusCareers}}
+                    <li class="hvr-bounce-in">
+                        <a href="{{link}}" target="{{target}}">
+                            <i class="{{icon}}" style="font-size: {{size}}; color: {{color}}"></i>
+                            <div>
+                                <h4>{{shortname}}</h4>
+                            </div>
+                        </a>
+                    </li>
+                {{/each}}
+            </ul>
+        </article>
+    </div>
+    {{#each career}}
+        <div class="button-postulate hvr-sink">
+            <div class="button-postulate">
+                <i class="bi bi-clipboard2-check" style="font-size: 4.5rem; color: #085eb9"></i>
+            </div>
+            {{#if_equal code "CIOR"}}
+                <a href="../pdf/careers/cior/frequent-questions.pdf"
+                   class="footer-call-to-action-button button space-button"
+                   target="_blank">
+                    <span>Informate aquí</span>
+                </a>
+            {{else}}
+                <a href="/admisiones"
+                   class="footer-call-to-action-button button space-button"
+                   target="_blank">
+                    <span>Postulate aquí</span>
+                </a>
+            {{/if_equal}}
+        </div>
+
+        <div class="content-hexagonal parrafo-section">
+            <h2 class="parrafo-final color-azul-h2">Contáctenos</h2>
+            <p class="parrafo-final margin-top-parrafo-final">{{coordinador_name}}</p>
+            <p class="parrafo-final">Coordinador de Carrera</p>
+            <a href="mailto:{{coordinador_correo}}">
+                <p class="parrafo-final">{{coordinador_correo}}</p>
+            </a>
+        </div>
+    {{/each}}
+</section>
+<section>
+
+</section>

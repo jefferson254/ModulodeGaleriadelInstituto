@@ -1,0 +1,29 @@
+<a href="/photos/add" class="btn btn-primary">Volver</a>  
+<section class="content">
+
+    <section>
+        
+   <div class="cardContainer">
+     <div class="item--full" style="background:rgb(175, 170, 170)">
+       <div class="">
+          <div class="title-section-hex-blue">
+                   
+            <form action="/actualizar/{{photo._id}}" method="POST">
+            <div class="form-group">
+                         <input type="text" name ="title"
+                          placeholder="Title" class="form-control" value="{{photo.title}}"/>
+                         </div>
+            <div class="form-group"> 
+            <textarea name="description" rows="3" class="form-control" placeholder="description">{{photo.description}}</textarea>
+                         </div>
+            <button class="btn btn-success btn-block">Actualizar</button>
+            </form> 
+
+
+
+          </div>
+     </div>
+ </div>
+</div>
+    </section>
+</section>

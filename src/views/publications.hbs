@@ -1,0 +1,39 @@
+<section>
+    <div>
+        <figure class="imagen-section2">
+            <h3 class="animated bounceInRight infinite center">
+                Las carreras Técnicas y Tecnológicas que ofrecemos, se desarrollan en el mejor ambiente institucional
+            </h3>
+        </figure>
+    </div>
+
+    <h2 class="title-hexagonal title-section-hex-blue">Libros y Publicaciones</h2>
+
+    <div class="grid-inti-50">
+        {{#each publications}}
+            <div class="adicional-grid">
+                <a href="{{pdf}}" target="_blank">
+                    <div id="imagen" style="background-image: url({{image}})">
+                        <div id="info">
+                            <p id="headline">{{title}}</p>
+                            <p id="descripcion">
+                                {{description}}
+                            </p>
+                            <p id="autor">
+                                <span>Autor: {{author}}</span>
+                            </p>
+                            {{#if isbn}}
+                                <p id="isbn">
+                                    <span>ISBN: {{isbn}}</span>
+                                </p>
+                            {{/if}}
+                            <p id="publicacion">
+                                <span>Año de publicación: {{year}}</span>
+                            </p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {{/each}}
+    </div>
+</section>

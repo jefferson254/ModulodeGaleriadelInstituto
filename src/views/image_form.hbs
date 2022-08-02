@@ -1,0 +1,132 @@
+<a href="/galeria/categoria" class="btn btn-primary">Volver</a>
+
+
+<!-- Button to trigger modal -->
+<button class="btn btn-success btn-primary" data-toggle="modal" data-target="#modalForm">
+    Añadir
+</button>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 search">
+            <form method="POST" action="/galeria/subcategorias/buscar/">
+                <div id="custom-search-input">
+                    <div class="input-group col-md-12">
+                        <input type="text" name="name" id="formulario" class="form-control my-2">
+                        <span class="input-group-list">
+                            <i class="icon icon-search">
+                                <button id="boton" type="submit" class="btn btn-info mb-2">Buscar</button>
+                            </i>
+                        </span>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalForm" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">×</span>
+                    <span class="sr-only">Cancelar</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Formulario de Subcategorias</h4>
+            </div>
+
+            <!-- Formulario de subir una imagen en una ventana de motal -->
+            <div class="modal-body">
+                <p class="statusMsg"></p>
+                <form action="/galeria/administracion/subcategorias" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <input type="text" name="title" class="form-control" placeholder="Titulo de la Imagen">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="description" class="form-control"
+                            placeholder="Descripción de la Imagen"></textarea>
+                    </div>
+                    <div>
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                            <input type="file" name="image" class="custom-file-input" id="inputGroupFile01"
+                                accept="image/png, image/jpeg, image/jpg" multiple>
+                            <label for="inputGroupFile01" class="custom-file-label"></label>
+                        </div>
+                    </div>
+                    <select class="form-control form-control-sm" name="parent_id">
+                        <option selected value="">Categoria Padre</option>
+                        {{#each categoriasPadres}}
+                        <option value="{{_id}}">{{title}}</option>
+                        {{/each}}
+                    </select>
+
+                    <br>
+                    <button class="btn btn-success btn-block">
+                        Subir
+                    </button>
+                </form>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="content">
+    <!-- Scrollable modal -->
+    <div class="modal-dialog modal-dialog-scrollable">
+
+    </div>
+
+    <section>
+        <h2 class="title-hexagonal title-section-hex-blue">Datos de Subcategorías</h2>
+        <div class="cardContainer">
+            <div class="item--full" style="background:rgb(250, 250, 250)">
+                <div class="">
+                    <div class="card-body">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <table class="table table-hover table-bordered" class="table" class="col-md-10"
+                    style="background:rgb(250, 250, 250)">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">N.</th>
+                            <th scope="col">Titulo</th>
+                            <th scope="col">Descripción</th>
+                            <th scope="col">Operacion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each categoria}}
+                        <tr>
+                            <td>{{@index}}</td>
+                            <td>{{title}}</td>
+                            <td>{{description}}
+                            <td>
+                                <a href="/galeria/delete/{{_id}}" class="btn btn-danger">Eliminar</a>
+
+                                <a href="/galeria/edit/{{_id}}" class="btn btn-primary">Editar</a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+</section>
+
+{{!-- //////////////////////////// --}}

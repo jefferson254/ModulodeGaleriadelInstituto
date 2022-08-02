@@ -1,0 +1,92 @@
+<section>
+    {{#each templateThree}}
+        <div class="content">
+                <h2 class="title-hexagonal title-section-hex-blue">{{title}}</h2>
+                <h3 class="title-hexagonal-h3 title-section-hex-black">{{subtitle}}</h3>
+            <div>
+                <figure class="imagen-section" style="
+                        background:linear-gradient(rgba(8, 25, 119, 0.548),rgba(27, 114, 245, 0.5)),url(../{{banner}});
+                        background-size: cover; 
+                        background-repeat: no-repeat;
+                        background-attachment: fixed;
+                        overflow:hidden;
+                        background-position-y:bottom ;">
+                
+                </figure>
+            </div>
+
+            {{#each texts.section-text}}
+                {{#if_equal @index 0}}
+                    <div class="parrafo-inti-yavirac">
+                        <p class="parrafos-inti word-large">
+                            {{this}}
+                        </p>
+                    </div>
+                {{/if_equal}}
+            {{/each}}
+
+            <div class="content-hexagonal">
+                <div class="grid-inti-50">
+                    {{#with texts.section-right}}
+                        <div class="adicional-grid espacio">
+                            <h2 class="title title-section-hex-blue">{{{subtitle}}}</h2>
+                            <p class="parrafos-inti word-large">
+                               {{{paragraph}}}
+                            </p>
+                        </div>
+                        <div class="adicional-grid">
+                            <img src="{{{image}}}" alt="">
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+
+            <div class="content-hexagonal">
+                <div class="grid-inti-50">
+                    {{#with texts.section-left}}
+                        <div class="adicional-grid">
+                            <img src="{{{image}}}" alt="">
+                        </div>
+                        <div class="adicional-grid espacio">
+                            <h2 class="title title-section-hex-blue">{{{subtitle}}}</h2>
+                            <p class="parrafos-inti word-large">
+                              {{{paragraph}}}
+                            </p>
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+
+             {{#each texts.section-text}}
+                {{#if_equal @index 1}}
+                    <div class="parrafo-inti-yavirac">
+                        <p class="parrafos-inti word-large">
+                            {{this}}
+                        </p>
+                    </div>
+                {{/if_equal}}
+            {{/each}}
+            {{!-- Carrousel --}}
+        <div class="content-slider-history">
+            <div class="sheetSlider sh-default sh-43 sh-auto">
+                <input id="s1" type="radio" name="slide1" checked/> 
+                <input id="s2" type="radio" name="slide1"/> 
+                <input id="s3" type="radio" name="slide1"/>
+                <input id="s4" type="radio" name="slide1"/>
+                <div class="sh__content">
+
+                    <!-- Slider Item -->
+                        {{#each slider}}
+                            <div class="sh__item">
+                                <img src="/{{this}}" alt="imgText"/>
+                            </div>
+                        {{/each}}
+
+                </div><!-- .sh__content -->
+
+            </div>
+        </div>
+        <!-- .sheetSlider -->
+        </div>
+    {{/each}}
+</section>

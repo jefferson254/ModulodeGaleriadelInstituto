@@ -1,0 +1,49 @@
+<section>
+    <div class="content">
+        <h1 class="title-hexagonal title-section-hex-blue">{{#each career}}
+            {{teachers}}
+            {{/each}}
+        </h1>
+
+        <div class="cardContainer">
+            <!--  card  -->
+            {{#each careerCoordinator}}
+            <a class="cardDocente">
+                <div class="cardDocente__item colorcardAutoridad">
+                    <span class="cardDocente__price">Coordinador de Carrera</span>
+                    <div class="cardDocente__image">
+                        <img src="{{image}}" alt="" onerror="this.src='/img/teachers/404.png';">
+                    </div>
+                    <div class="cardDocente__content" style="text-align: center;">
+                        <span class="cardDocente__title line-clamp-2">{{name}}</span>
+                        <hr>
+                        <span class="cardDocente__price">{{degree}}</span>
+                    </div>
+                </div>
+            </a>
+            {{/each}}
+            <!-- End card  -->
+        </div>
+
+        <div class="cardContainer">
+            <!--  card  -->
+            {{#each teachers}}
+            <a class="cardDocente">
+                <div class="cardDocente__item colorcardAutoridad">
+                    <span class="cardDocente__price">Docente</span>
+
+                    <div class="cardDocente__image">
+                        <img src="{{image}}" alt="" onerror="this.src='/img/teachers/404.png';">
+                    </div>
+                    <div class="cardDocente__content" style="text-align: center;">
+                        <span class="cardDocente__title line-clamp-2">{{name}}</span>
+                        <hr>
+                        <span class="cardDocente__price">{{degree}}</span>
+                    </div>
+                </div>
+            </a>
+            {{/each}}
+            <!-- End card  -->
+        </div>
+    </div>
+</section>

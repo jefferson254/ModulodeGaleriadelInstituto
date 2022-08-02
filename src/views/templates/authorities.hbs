@@ -1,0 +1,92 @@
+<section>
+    <div class="content">
+        <h2 class="title-hexagonal title-section-hex-blue">Autoridades y Directivos</h2>
+        <div class="cardContainer">
+            <!--  card  -->
+            {{#with rector}}
+            <a class="cardDocente">
+                <div class="cardDocente__item colorcardAutoridad">
+                    <div class="cardDocente__image">
+                        <img src="{{image}}" alt="" onerror="this.src='/img/teachers/404.png';">
+                    </div>
+                    <div class="cardDocente__content" style="text-align: center;">
+                        <span class="cardDocente__title line-clamp-2">{{name}}</span>
+                        <hr>
+                        {{#each positions}}
+                        <span class="cardDocente__price">{{this}}</span>
+                        {{/each}}
+                        {{!-- <span class="cardDocente_price">{{email}}</span> --}}
+                    </div>
+                </div>
+            </a>
+            {{/with}}
+            <!-- End card  -->
+
+            <!--  card  -->
+            {{#with vicechancellor}}
+            <a class="cardDocente">
+                <div class="cardDocente__item colorcardAutoridad">
+                    <div class="cardDocente__image">
+                        <img src="{{image}}" alt="" onerror="this.src='/img/teachers/404.png';">
+                    </div>
+                    <div class="cardDocente__content" style="text-align: center;">
+                        <span class="cardDocente__title line-clamp-2">{{name}}</span>
+                        <hr>
+                        {{#each positions}}
+                        <span class="cardDocente__price">{{this}}</span>
+                        {{/each}}
+                        {{!-- <span class="cardDocente_price">{{email}}</span> --}}
+                    </div>
+                </div>
+            </a>
+            {{/with}}
+            <!-- End card  -->
+        </div>
+        <hr>
+        <h2 class="title-hexagonal title-section-hex-blue">Coordinadores de Carrera</h2>
+        <div class="cardContainer">
+            <!--  card  -->
+            {{#each careerCoordinators}}
+            <a class="cardDocente">
+                <div class="cardDocente__item colorcardAutoridad">
+                    <div class="cardDocente__image">
+                        <img src="{{image}}" alt="" onerror="this.src='/img/teachers/404.png';">
+                    </div>
+                    <div class="cardDocente__content" style="text-align: center;">
+                        <span class="cardDocente__title line-clamp-2">{{name}}</span>
+                        <hr>
+                        {{#each positions}}
+                        <span class="cardDocente__price">{{this}}</span>
+                        {{/each}}
+                        {{!-- <span class="cardDocente_price">{{email}}</span> --}}
+                    </div>
+                </div>
+            </a>
+            {{/each}}
+            <!-- End card  -->
+        </div>
+        <hr>
+        <h2 class="title-hexagonal title-section-hex-blue">Coordinadores y Administrativos</h2>
+        <div class="cardContainer">
+            <!--  card  -->
+            {{#each administrativeCoordinators}}
+            <a class="cardDocente">
+                <div class="cardDocente__item colorcardAutoridad">
+                    <div class="cardDocente__image">
+                        <img src="{{image}}" alt="" onerror="this.src='/img/teachers/404.png';">
+                    </div>
+                    <div class="cardDocente__content" style="text-align: center;">
+                        <span class="cardDocente__title line-clamp-2">{{name}}</span>
+                        <hr>
+                        {{#each positions}}
+                        <span class="cardDocente__price">{{this}}</span>
+                        {{/each}}
+                        {{!-- <span class="cardDocente_price">{{email}}</span> --}}
+                    </div>
+                </div>
+            </a>
+            {{/each}}
+            <!-- End card  -->
+        </div>
+    </div>
+</section>

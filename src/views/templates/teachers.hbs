@@ -1,0 +1,27 @@
+<section>
+    <div class="content">
+        <h2 class="title-hexagonal title-section-hex-blue">Planta Docente - {{total}}</h2>
+        <div class="cardContainer">
+            <!--  card  -->
+            {{#each teachers}}
+            <a class="cardDocente">
+                <div class="cardDocente__item colorcardAutoridad">
+                    {{#each positions}}
+                    <span class="cardDocente__price">{{this}}</span>
+                    {{/each}}
+                    <div class="cardDocente__image">
+                        <img src="{{image}}" alt="" onerror="this.src='/img/teachers/404.png';">
+                    </div>
+                    <div class="cardDocente__content" style="text-align: center;">
+                        <span class="cardDocente__title line-clamp-2">{{name}}</span>
+                        <hr>
+                        <span class="cardDocente__price">{{degree}}</span>
+                        {{!-- <span class="cardDocente_price">{{email}}</span> --}}
+                    </div>
+                </div>
+            </a>
+            {{/each}}
+            <!-- End card  -->
+        </div>
+    </div>
+</section>

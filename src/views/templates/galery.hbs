@@ -1,0 +1,47 @@
+<section>
+    {{#each templateOne}}   
+        <h2 class="title-hexagonal title-section-hex-blue">{{title}}</h2>
+        <h3 class="title-hexagonal-h3 title-section-hex-black">{{subtitle}}</h3>
+        <div>
+            <figure class="imagen-section" style="
+                background:linear-gradient(rgba(8, 25, 119, 0.548),rgba(27, 114, 245, 0.5)),url(../{{banner}});
+                background-size: cover; 
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                overflow:hidden;
+                background-position-y:bottom ;">
+            </figure>
+        </div>
+        <div class="content">
+            <div class="grid-new">
+                 {{#each texts.section-text}}
+                        <p class="parrafos-inti">
+                            {{this}}
+                        </p>
+                 {{/each}}
+            </div>
+        </div>
+            <div class="content">
+                {{!-- Carrousel --}}
+                <div class="content-slider-history">
+                    <div class="sheetSlider sh-default sh-43 sh-auto">
+                        <input id="s1" type="radio" name="slide1" checked/> 
+                        <input id="s2" type="radio" name="slide2"/> 
+                        <input id="s3" type="radio" name="slide3"/>
+                        <input id="s4" type="radio" name="slide4"/>
+                        <div class="sh__content">
+
+                            <!-- Slider Item -->
+                        {{#each slider}}
+                            <div class="sh__item">
+                                <img src="/{{this}}" alt="imgText"/>
+                            </div>
+                        {{/each}}
+                        </div><!-- .sh__content -->
+                
+                    </div>
+                </div>
+                <!-- .sheetSlider -->
+            </div>
+        {{/each}}
+</section>

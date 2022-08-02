@@ -1,0 +1,58 @@
+<section>
+     {{#each templateTwo}}   
+         <h2 class="title-hexagonal title-section-hex-blue">{{title}}</h2>
+        <h3 class="title-hexagonal-h3 title-section-hex-black">{{subtitle}}</h3>
+        <div>
+            <figure class="imagen-section" style="
+                    background:linear-gradient(rgba(8, 25, 119, 0.548),rgba(27, 114, 245, 0.5)),url(../{{banner}});
+                    background-size: cover; 
+                    background-repeat: no-repeat;
+                    background-attachment: fixed;
+                    overflow:hidden;
+                    background-position-y:bottom ;">
+            </figure>
+        </div>
+        <div class="content-hexagonal">
+                <div class="grid-inti-50">
+                    {{#with texts.section-right}}
+                        <div class="adicional-grid espacio">
+                            <h2 class="title title-section-hex-blue">{{{subtitle}}}</h2>
+                            <p class="parrafos-inti">
+                                {{{paragraph}}}
+                            </p>
+                        </div>
+                        <div class="adicional-grid">
+                            <img src="{{{image}}}" alt="">
+                        </div>
+                    {{/with}}
+                </div>
+            </div>
+
+        <div class="content-hexagonal">
+            <div class="grid-inti-50">
+                {{#with texts.section-left}}
+                <div class="adicional-grid">
+                    <img src="{{{image}}}" alt="">
+                </div>
+                <div class="adicional-grid espacio">
+                    <h2 class="title title-section-hex-blue">{{{subtitle}}}</h2>
+                    <p class="parrafos-inti">
+                    {{{paragraph}}}
+                    </p>
+                </div>
+                {{/with}}
+            </div>
+        </div>
+        
+         <div class="content">
+            <div class="grid-new">
+                 {{#each texts.section-text}}
+                        <p class="parrafos-inti">
+                            {{this}}
+                        </p>
+                 {{/each}}
+            </div>
+        </div>
+    {{/each}}
+</section>
+
