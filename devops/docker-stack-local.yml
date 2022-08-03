@@ -1,0 +1,45 @@
+version: '3.8'
+
+services:
+  web-test:
+    image: web-test:latest
+    ports:
+      - target: 2323
+        published: 8020
+        protocol: tcp
+        mode: host
+    networks:
+      - traefik-public
+      - web_net
+  mongo:
+    image: mongo
+    #environment:
+    #  MONGO_INITDB_ROOT_USERNAME: root
+    #  MONGO_INITDB_ROOT_PASSWORD: example
+    networks:
+      - web_net
+    volumes:
+      - mongo_data:/data/db
+
+  express-mongo:
+    image: mongo-express
+    ports:
+      - target: 8081
+        published: 8081
+        protocol: tcp
+        mode: host
+    #environment:
+      #ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      #ME_CONFIG_MONGODB_ADMINPASSWORD: example
+      #ME_CONFIG_MONGODB_URL: mongodb://mongo:27017/
+    networks:
+      - web_net
+networks:
+  traefik-public:
+    external: true
+  web_net:
+    external: true
+
+volumes:
+  mongo_data:
+    external: true
